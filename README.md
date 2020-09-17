@@ -3,7 +3,9 @@
   <br>Plutonium Easy Installer
 </h1>
                                                                                             
-### An easy-to-use installer for [Call of Duty: Black Ops 2 Plutonium (T6)](https://plutonium.pw/)
+<h3 align="center"> An easy-to-use installer for <a href="https://plutonium.pw/">Call of Duty: Black Ops 2 Plutonium (T6)</a></h3>
+
+<br/>
 
 ## What is Call of Duty: Black Ops 2 Plutonium?
 It is a special version of **Call of Duty: Black Ops 2** on PC that just simply makes the game better!
@@ -30,6 +32,8 @@ Have you been VAC-banned from the original game? Don't worry, this game doesn't 
 #### Doesn't modify any base-game files
 This means you can use the same Call of Duty: Black Ops 2 files for both Plutonium and Steam.
 
+<br/>
+
 ## Sounds interesting, how do I play it?
 #### Just download and run this [file]().
 
@@ -47,7 +51,11 @@ However, you can do any one of the following steps **(This option is technically
 ##### This is a web installer. An active internet connection is required to install the game. The installer itself does not contain any files.
 ##### I am not affiliated with the Plutonium project in any way. If you require assistance with Plutonium, go to the [Plutonium forums](https://forum.plutonium.pw/).
 
+<br/>
+
 ---
+
+<br/>
 
 ## Arguments
 If you're a simple guy who doesn't care about more complicated stuff, then you can safely ignore everything past this point.
