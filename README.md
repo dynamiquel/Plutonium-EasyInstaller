@@ -7,6 +7,15 @@
 
 <br/>
 
+<h3 align="center"> 
+    <a href="https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1/Plutonium.Easy.Installer.exe">🎆 Download the installer and get started 🎆</a>
+</h3>
+<p align="center">
+    <a href="https://www.virustotal.com/gui/file/6fe4b6bf7010fdc847106e5dbd37c00942a6dd9c64ac471db986444054c77cd7/detection">Virus Report</a>
+</p>
+
+<br/>
+
 ## What is Call of Duty: Black Ops 2 Plutonium?
 It is a special version of **Call of Duty: Black Ops 2** on PC that just simply makes the game better!
 
@@ -48,6 +57,24 @@ However, you can do any one of the following steps **(This option is technically
 2. Ask a friend who does own the DLC to send you their DLC files.
 3. Download the files found on this [site](https://cabconmodding.com/threads/black-ops-2-map-packs-download.1298/).
 
+<br/>
+
+## 📰 **Guides**
+[**Official installation guide**](https://forum.plutonium.pw/topic/2819/how-to-install-update-plutonium-t6)
+
+[**FAQ and Common Issues**](https://forum.plutonium.pw/topic/9/common-issues-and-frequently-asked-questions-t6)
+
+[**Custom Games with Friends**](https://forum.plutonium.pw/topic/7/custom-games-with-friends)
+
+[**Setting-up a Server**](https://forum.plutonium.pw/topic/13/plutot6-server-set-up-guide)
+
+[**Run in LAN mode or with Anti-cheat disabled**](https://forum.plutonium.pw/topic/2688/running-bo2-in-lan-mode-anticheat-disabled)
+
+[**Controller Support**](https://forum.plutonium.pw/topic/2813/setting-up-a-ps4-controller-with-ds4windows)
+
+[**Loading Custom Camos**](https://forum.plutonium.pw/topic/2835/tutorial-how-to-load-custom-camos-textures?_=1597689786518)
+
+
 ##### This is a web installer. An active internet connection is required to install the game. The installer itself does not contain any files.
 ##### I am not affiliated with the Plutonium project in any way. If you require assistance with Plutonium, go to the [Plutonium forums](https://forum.plutonium.pw/).
 
@@ -57,7 +84,7 @@ However, you can do any one of the following steps **(This option is technically
 
 <br/>
 
-## Arguments
+## 👩‍💻 Arguments
 If you're a simple guy who doesn't care about more complicated stuff, then you can safely ignore everything past this point.
 
 #### /DisableAutoDetect
@@ -65,6 +92,7 @@ Disables the installer from automatically choosing a Call of Duty: Black Ops 2 f
 
 #### /Directory "path"
 Steam: Sets the currently installed Call of Duty: Black Ops 2 directory.
+
 Non-Steam: Sets where the new installation of Call of Duty: Black Ops 2 will be installed.
 
 #### /Steam
