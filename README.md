@@ -16,7 +16,7 @@
 
 <br/>
 
-## What is Call of Duty: Black Ops 2 Plutonium?
+## ❓ What is Call of Duty: Black Ops 2 Plutonium?
 It is a special version of **Call of Duty: Black Ops 2** on PC that just simply makes the game better!
 
 ### Features only found in Plutonium
@@ -43,7 +43,7 @@ This means you can use the same Call of Duty: Black Ops 2 files for both Plutoni
 
 <br/>
 
-## Sounds interesting, how do I play it?
+## 🎮 Sounds interesting, how do I play it?
 #### Just download and run this [file](https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1/Plutonium.Easy.Installer.exe).
 
 ### I don't have Call of Duty: Black Ops 2
