@@ -44,7 +44,7 @@ This means you can use the same Call of Duty: Black Ops 2 files for both Plutoni
 <br/>
 
 ## 🎮 Sounds interesting, how do I play it?
-#### Just download and run this [file](https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1/Plutonium.Easy.Installer.exe).
+#### Just download and run this [file](https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1.0.1/PlutoniumEasyInstaller.exe).
 
 ### I don't have Call of Duty: Black Ops 2
 If you do not own **Call of Duty: Black Ops 2** on Steam, don't worry! The installer can do it for you. **(This option is technically piracy, but we're not judging. Pirate at your own risk!)**
