@@ -8,7 +8,7 @@
 <br/>
 
 <h3 align="center"> 
-    <a href="https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1/Plutonium.Easy.Installer.exe">🎆 Download the installer and get started 🎆</a>
+    <a href="https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1.0.1/Plutonium.Easy.Installer.exe">🎆 Download the installer and get started 🎆</a>
 </h3>
 <p align="center">
     <a href="https://www.virustotal.com/gui/file/6fe4b6bf7010fdc847106e5dbd37c00942a6dd9c64ac471db986444054c77cd7/detection">Virus Report</a>
