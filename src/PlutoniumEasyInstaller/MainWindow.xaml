@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Title="Install COD: Black Ops 2 Plutonium (T6)" Height="318" Width="800" MinHeight="318" MinWidth="600" Icon="plutonium.png">
+        Title="Install COD: Black Ops 2 Plutonium (T6)" Height="320" Width="800" MinHeight="318" MinWidth="600" Icon="plutonium.png">
     <Grid Margin="8,8,8,8">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

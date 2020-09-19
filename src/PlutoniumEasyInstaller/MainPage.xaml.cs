@@ -33,24 +33,19 @@ namespace PlutoniumEasyInstaller
             if (loaded)
                 return;
 
+            if (!App.IgnoreSystemChecks)
+            {
+                DetectAntiMalware();
+                DetectVCPP();
+                DetectDirectX();
+            }
+
             if (App.AutoSteamInstall)
                 GoToPlutoniumSetup();
             else if (App.AutoNonSteamInstall)
                 GoToPirySetup();
 
-            DetectAntiMalware();
-
             loaded = true;
-        }
-
-        protected override void OnNextButtonPressed()
-        {
-
-        }
-
-        protected override void OnWindowSet()
-        {
-
         }
 
         public override void OnNavigated()
@@ -88,8 +83,53 @@ namespace PlutoniumEasyInstaller
             }
         }
 
+        private void DetectVCPP()
+        {
+            var installedVersionStr = (string)Microsoft.Win32.Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\VisualStudio\10.0\VC\VCRedist\x86", "Version", "v0");
+            installedVersionStr = installedVersionStr.Replace("v", "");
+
+            var installedVersion = Version.Parse(installedVersionStr);
+            var requiredVersion = Version.Parse("10.0.40219.325");
+            
+
+            if (installedVersion < requiredVersion)
+            {
+                var result = System.Windows.MessageBox.Show(Properties.Resources.Start_VCPPOutdated,
+                    Properties.Resources.Start_OutdatedDependencies,
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                    Process.Start(new ProcessStartInfo("https://www.microsoft.com/en-gb/download/confirmation.aspx?id=5555"));
+            }
+        }
+
+        private void DetectDirectX()
+        {
+            if (!System.IO.File.Exists(@"C:\Windows\System32\d3d11.dll"))
+            {
+                var result = System.Windows.MessageBox.Show(Properties.Resources.Start_DirectXOutdated,
+                    Properties.Resources.Start_OutdatedDependencies,
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                    Process.Start(new ProcessStartInfo("https://www.microsoft.com/en-us/download/confirmation.aspx?id=35"));
+            }
+        }
+
         private static bool IsValidBO2Directory(string path) =>
-            System.IO.File.Exists(System.IO.Path.Combine(path, "t6rzm.exe")) || System.IO.File.Exists(System.IO.Path.Combine(path, "t6zm.exe"));
+            System.IO.File.Exists(System.IO.Path.Combine(path, "t6rzm.exe")) || 
+            System.IO.File.Exists(System.IO.Path.Combine(path, "t6zm.exe"));
+
+        private static bool IsMissingDLC(string path)
+        {
+            return !System.IO.File.Exists(System.IO.Path.Combine(path, "DLC1.md5")) ||
+                !System.IO.File.Exists(System.IO.Path.Combine(path, "DLC2.md5")) ||
+                !System.IO.File.Exists(System.IO.Path.Combine(path, "DLC3.md5")) ||
+                !System.IO.File.Exists(System.IO.Path.Combine(path, "DLC4.md5")) ||
+                !System.IO.File.Exists(System.IO.Path.Combine(path, "Nuketown.md5"));
+        }
 
         private static string ShowBO2DirectoryDialogue()
         {
@@ -167,13 +207,34 @@ namespace PlutoniumEasyInstaller
             if (string.IsNullOrWhiteSpace(bo2Directory))
                 return;
 
-            var plutoniumConfigPage = new PlutoniumConfigPage
+            if (IsMissingDLC(bo2Directory))
+            {
+                var result = System.Windows.MessageBox.Show(Properties.Resources.Start_DLCMissing,
+                    Properties.Resources.Start_DLCMissingHeader,
+                    MessageBoxButton.YesNoCancel,
+                    MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    var piryInstallPage = new PiryInstallPage
+                    {
+                        BO2Directory = bo2Directory
+                    };
+
+                    Window.Navigate(piryInstallPage);
+                    return;
+                }
+                else if (result == MessageBoxResult.Cancel)
+                    return;
+            }
+
+            var plutoConfigPage = new PlutoniumConfigPage
             {
                 BO2Directory = bo2Directory
             };
 
             Window.EnableBackButton = true;
-            Window.Navigate(plutoniumConfigPage);
+            Window.Navigate(plutoConfigPage);
         }
 
         private void GoToPirySetup()

@@ -61,7 +61,7 @@ namespace PlutoniumEasyInstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to This app is already running..
         /// </summary>
         public static string AlreadyRunningWarning {
             get {
@@ -454,6 +454,36 @@ namespace PlutoniumEasyInstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are running an outdated version of &apos;Microsoft DirectX&apos;.
+        ///It is recommended to install the latest version for a smooth setup.
+        ///
+        ///Do you want to install the latest version?.
+        /// </summary>
+        public static string Start_DirectXOutdated {
+            get {
+                return ResourceManager.GetString("Start_DirectXOutdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some DLC packs are missing. Do you want to install them?\n\nDLC packs are recommended for the best experience.\nInstalling DLC packs is piracy..
+        /// </summary>
+        public static string Start_DLCMissing {
+            get {
+                return ResourceManager.GetString("Start_DLCMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DLC Missing.
+        /// </summary>
+        public static string Start_DLCMissingHeader {
+            get {
+                return ResourceManager.GetString("Start_DLCMissingHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This installer will help you install Plutonium for Call of Duty: Black Ops 2 (T6).
         /// </summary>
         public static string Start_InstallerInfo {
@@ -491,6 +521,15 @@ namespace PlutoniumEasyInstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Outdated dependencies.
+        /// </summary>
+        public static string Start_OutdatedDependencies {
+            get {
+                return ResourceManager.GetString("Start_OutdatedDependencies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for downloading Plutonium!.
         /// </summary>
         public static string Start_PlutoniumWelcome {
@@ -523,6 +562,18 @@ namespace PlutoniumEasyInstaller.Properties {
         public static string Start_SteamOwners {
             get {
                 return ResourceManager.GetString("Start_SteamOwners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are running an outdated version of &apos;Microsoft Visual C++ 2010 Redistributables&apos;.
+        ///It is recommended to install the latest version for a smooth setup.
+        ///
+        ///Do you want to install the latest version?.
+        /// </summary>
+        public static string Start_VCPPOutdated {
+            get {
+                return ResourceManager.GetString("Start_VCPPOutdated", resourceCulture);
             }
         }
     }

@@ -252,6 +252,18 @@ Si vous continuez sans désactiver votre anti-malware, vous déclencherez probab
     <value>Call of Duty: Black Ops 2 n’a pas pu être trouvé sur votre appareil.
 Pouvez-vous me montrer où il est?</value>
   </data>
+  <data name="Start_DirectXOutdated" xml:space="preserve">
+    <value>You are running an outdated version of 'Microsoft DirectX'.
+It is recommended to install the latest version for a smooth setup.
+
+Do you want to install the latest version?</value>
+  </data>
+  <data name="Start_DLCMissing" xml:space="preserve">
+    <value>Some DLC packs are missing. Do you want to install them?\n\nDLC packs are recommended for the best experience.\nInstalling DLC packs is piracy.</value>
+  </data>
+  <data name="Start_DLCMissingHeader" xml:space="preserve">
+    <value>DLC Missing</value>
+  </data>
   <data name="Start_InstallerInfo" xml:space="preserve">
     <value>L’application vous aidera à installer du Plutonium for Call of Duty: Black Ops 2 (T6)</value>
   </data>
@@ -265,6 +277,9 @@ Réessayez?</value>
   <data name="Start_NonSteamOwners" xml:space="preserve">
     <value>Non-Steam Détenteurs</value>
   </data>
+  <data name="Start_OutdatedDependencies" xml:space="preserve">
+    <value>Outdated dependencies</value>
+  </data>
   <data name="Start_PlutoniumWelcome" xml:space="preserve">
     <value>Merci d’avoir Téléchargé Plutonium</value>
   </data>
@@ -276,5 +291,11 @@ Réessayez?</value>
   </data>
   <data name="Start_SteamOwners" xml:space="preserve">
     <value>Steam Détenteurs</value>
+  </data>
+  <data name="Start_VCPPOutdated" xml:space="preserve">
+    <value>You are running an outdated version of 'Microsoft Visual C++ 2010 Redistributables'.
+It is recommended to install the latest version for a smooth setup.
+
+Do you want to install the latest version?</value>
   </data>
 </root>

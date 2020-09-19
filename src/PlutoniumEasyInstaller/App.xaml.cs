@@ -20,6 +20,7 @@ namespace PlutoniumEasyInstaller
         public static bool NoReShade { get; private set; } = false;
         public static bool SingleInstance { get; private set; } = true;
         public static bool AutoConfig { get; private set; } = false;
+        public static bool IgnoreSystemChecks { get; private set; } = false;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -71,6 +72,9 @@ namespace PlutoniumEasyInstaller
                             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
                         }
                         catch { }
+                        break;
+                    case "/IgnoreSystemChecks":
+                        IgnoreSystemChecks = true;
                         break;
                 }
             }
