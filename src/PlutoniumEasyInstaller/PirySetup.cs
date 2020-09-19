@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Net;
+using System.Windows.Threading;
 
 namespace PlutoniumEasyInstaller
 {
@@ -63,7 +64,8 @@ namespace PlutoniumEasyInstaller
                         RedirectStandardOutput = true,
                         CreateNoWindow = true,
                         UseShellExecute = false,
-                        WorkingDirectory = directory
+                        WorkingDirectory = directory,
+                        RedirectStandardInput = true
                     },
                 };
 
@@ -91,13 +93,22 @@ namespace PlutoniumEasyInstaller
             string line = e.Data;
             OnPiryOutput?.Invoke(line);
 
-            if (!string.IsNullOrEmpty(line) && line.Contains("100 %"))
+            if (string.IsNullOrEmpty(line))
+                return;
+
+            var process = (Process)sender;
+
+            if (line.Contains("100 %"))
             {
-                var process = (Process)sender;
                 process.CancelOutputRead();
                 process.Kill();
                 currentProcess = null;
                 InstallComplete?.Invoke();
+            }
+            // Bypasses the "It looks like you're running from a common or non-empty folder, are you sure you want to continue?" message.
+            else if (line.Contains("common"))
+            {
+                process.StandardInput.WriteLine("Yes");
             }
         }
     }

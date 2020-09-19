@@ -85,8 +85,8 @@ namespace PlutoniumEasyInstaller
 
         private void Write(string content)
         {
-            System.Diagnostics.Debug.Write(content);
-            DownloadStatusText.AppendText(content);
+            System.Diagnostics.Debug.WriteLine(content);
+            DownloadStatusText.AppendText($"\r{content}");
             DownloadStatusText.ScrollToEnd();
         }
 
@@ -94,8 +94,8 @@ namespace PlutoniumEasyInstaller
         {
             errorEncountered = true;
 
-            MessageBox.Show("There was an error during installation. Please open this app and try again.",
-                "Failed to install",
+            MessageBox.Show(Properties.Resources.InstallationError,
+                Properties.Resources.InstallationErrorHeader,
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
 
@@ -107,7 +107,7 @@ namespace PlutoniumEasyInstaller
             if (!fileSizeAnnounced)
             {
                 fileSizeAnnounced = true;
-                Write($"\rFile is {Math.Round(e.TotalBytesToReceive / 1000000f, 1)} MB.");
+                Write($"File is {Math.Round(e.TotalBytesToReceive / 1000000f, 1)} MB.");
             }
 
             if (e.ProgressPercentage % 10 == 0)
@@ -116,7 +116,7 @@ namespace PlutoniumEasyInstaller
                     return;
 
                 recordedPercentages.Add(e.ProgressPercentage);
-                Write($"\r{e.ProgressPercentage}% complete.");
+                Write($"{e.ProgressPercentage}% complete.");
             }
         }
 
@@ -130,8 +130,8 @@ namespace PlutoniumEasyInstaller
 
             bool downloadSuceeded = PlutoniumSetup.Download(BO2Directory);
 
-            //if (!downloadSuceeded)
-              //  Error();
+            if (!downloadSuceeded)
+                Error();
 
             PlutoniumSetup.DownloadProgressChangedEvent -= OnDownloadProgressChanged;
         }
@@ -145,17 +145,17 @@ namespace PlutoniumEasyInstaller
 
             if (e.Cancelled)
             {
-                Write("\rDownload was cancelled!");
+                Write(Properties.Resources.DownloadCancelled);
                 Error();
             }
             else if (e.Error != null)
             {
-                Write($"\rDownload failed! Reason: {e.Error}.");
+                Write(string.Format(Properties.Resources.DownloadFailed, e.Error.Message));
                 Error();
             }
             else
             {
-                Write("\rDownload complete!");
+                Write(Properties.Resources.DownloadComplete);
 
                 ProcessInstallStage(InstallStage.DownloadReShade);
             }
@@ -163,9 +163,9 @@ namespace PlutoniumEasyInstaller
 
         private void SetupShortcuts()
         {
-            Write("\rCreating shortcuts...");
+            Write(Properties.Resources.CreatingShortcuts);
             PlutoniumSetup.CreateShortcuts(BO2Directory, enableStartShortcut, enableDesktopShortcut);
-            Write("\rShortcuts created.");
+            Write(Properties.Resources.ShortcutsCreated);
 
             ProcessInstallStage(InstallStage.InstallPlutonium);
         }
@@ -177,22 +177,22 @@ namespace PlutoniumEasyInstaller
             PlutoniumSetup.DownloadProgressChangedEvent += OnDownloadProgressChanged;
             PlutoniumSetup.DownloadCompleteEvent += OnReShadeDownloadComplete;
 
-            Write("\rDownloading ReShade...");
+            Write(Properties.Resources.PlutoInstall_DownloadingReShade);
 
             bool downloadSuccess = PlutoniumSetup.DownloadReShade();
             if (!downloadSuccess)
-                Write("\rReShade installation failed!");
+                Write(Properties.Resources.PlutoInstall_ReShadeDownloadFailed);
         }
 
         private void OnReShadeDownloadComplete(object sender, AsyncCompletedEventArgs e)
         {
             if (e.Cancelled)
-                Write("\rReShade download was cancelled!");
+                Write(Properties.Resources.PlutoInstall_ReShadeDownloadCancelled);
             else if (e.Error != null)
-                Write("\rReShade download failed!");
+                Write(Properties.Resources.PlutoInstall_ReShadeDownloadFailed);
             else
             {
-                Write("\rReShade download complete!");
+                Write(Properties.Resources.PlutoInstall_ReShadeDownloadComplete);
             }
 
             ProcessInstallStage(InstallStage.CreateShortcuts);
@@ -203,7 +203,7 @@ namespace PlutoniumEasyInstaller
             PlutoniumSetup.InstallConfigComplete += OnPlutoniumInstallConfigComplete;
             PlutoniumSetup.InstallComplete += OnPlutoniumInstallComplete;
 
-            Write("\rCreating config file...");
+            Write(Properties.Resources.PlutoInstall_CreatingConfigFile);
             PlutoniumSetup.Install(BO2Directory);
         }
 
@@ -212,7 +212,7 @@ namespace PlutoniumEasyInstaller
             await Dispatcher.SwitchToUi();
 
             PlutoniumSetup.InstallComplete -= OnPlutoniumInstallComplete;
-            Write("\rPlutonium installed.");
+            Write(Properties.Resources.PlutoInstall_InstallingPlutonium);
 
             Window.EnableNavigationBar = false;
             Window.Navigate(new CompletePage());
@@ -221,8 +221,8 @@ namespace PlutoniumEasyInstaller
         private void OnPlutoniumInstallConfigComplete()
         {
             PlutoniumSetup.InstallConfigComplete -= OnPlutoniumInstallConfigComplete;
-            Write("\rConfig file created.");
-            Write("\rInstalling Plutonium...");
+            Write(Properties.Resources.PlutoInstall_ConfigFileCreated);
+            Write(Properties.Resources.PlutoInstall_InstallingPlutonium);
         }
     }
 

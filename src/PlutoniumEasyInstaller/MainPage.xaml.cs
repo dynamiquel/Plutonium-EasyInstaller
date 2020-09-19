@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -20,9 +21,6 @@ namespace PlutoniumEasyInstaller
             @"S:\Games\Call of Duty Black Ops II",
         };
 
-        private static readonly string locateBO2DirectoryMessage = "The folder selected does not contain Call of Duty: Black Ops 2.\nTry again?";
-        private static readonly string locateBO2DirectoryMessageFirstTime = "Call of Duty: Black Ops 2 could not be found on your computer.\nCould you show me where it is?";
-
         private bool loaded = false;
 
         public MainPage()
@@ -39,6 +37,8 @@ namespace PlutoniumEasyInstaller
                 GoToPlutoniumSetup();
             else if (App.AutoNonSteamInstall)
                 GoToPirySetup();
+
+            DetectAntiMalware();
 
             loaded = true;
         }
@@ -58,15 +58,45 @@ namespace PlutoniumEasyInstaller
             Window.EnableNavigationBar = false;
         }
 
+        private void DetectAntiMalware()
+        {
+            List<string> malwareProcessNames = new List<string>()
+            {
+                "Bitdefender Agent",
+                "Bitdefender agent",
+                "bdservicehost",
+                "AVG Antivirus",
+                "McAfee",
+                "McAfee Host",
+                "Norton Internet Security",
+                "Norton Security",
+                "Malwarebytes Service"
+            };
+
+            foreach (var malwareProcessName in malwareProcessNames)
+            {
+                // get the list of all processes by the "procName"       
+                if (Process.GetProcessesByName(malwareProcessName).Length > 0)
+                {
+                    System.Windows.MessageBox.Show(Properties.Resources.AntiMalwareWarning, 
+                        Properties.Resources.AntiMalwareWarningHeader, 
+                        MessageBoxButton.OK, 
+                        MessageBoxImage.Warning);
+
+                    break;
+                }
+            }
+        }
+
         private static bool IsValidBO2Directory(string path) =>
-            System.IO.File.Exists(System.IO.Path.Combine(path, "t6rzm.exe"));
+            System.IO.File.Exists(System.IO.Path.Combine(path, "t6rzm.exe")) || System.IO.File.Exists(System.IO.Path.Combine(path, "t6zm.exe"));
 
         private static string ShowBO2DirectoryDialogue()
         {
             var folderDialogue = new FolderBrowserDialog()
             {
                 ShowNewFolderButton = true,
-                Description = "Select the COD: Black Ops 2 folder.",
+                Description = Properties.Resources.Start_SelectBO2Folder,
                 RootFolder = Environment.SpecialFolder.MyComputer
             };
 
@@ -98,13 +128,13 @@ namespace PlutoniumEasyInstaller
 
             if (string.IsNullOrWhiteSpace(bo2Directory))
             {
-                string locateMessage = locateBO2DirectoryMessageFirstTime;
+                string locateMessage = Properties.Resources.Start_BO2NotFound;
 
                 while (string.IsNullOrWhiteSpace(bo2Directory))
                 {
                     var messageBoxResult = System.Windows.MessageBox.Show(
                         locateMessage,
-                        "Game not found!",
+                        Properties.Resources.GameNotFound,
                         MessageBoxButton.YesNo,
                         MessageBoxImage.Exclamation);
 
@@ -116,7 +146,7 @@ namespace PlutoniumEasyInstaller
                     if (IsValidBO2Directory(selectedPath))
                         bo2Directory = selectedPath;
                     else
-                        locateMessage = locateBO2DirectoryMessage;
+                        locateMessage = Properties.Resources.Start_InvalidBO2Folder;
                 }
 
             }

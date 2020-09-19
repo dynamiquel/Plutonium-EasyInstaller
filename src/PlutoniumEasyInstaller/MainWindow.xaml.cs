@@ -52,14 +52,12 @@ namespace PlutoniumEasyInstaller
 
         private void ForceSingleInstance()
         {
-            string processName = Process.GetCurrentProcess().ProcessName;
+            string currentProcessName = Process.GetCurrentProcess().ProcessName;
 
             // get the list of all processes by the "procName"       
-            var processes = Process.GetProcessesByName(processName);
-
-            if (processes.Length > 1)
+            if (Process.GetProcessesByName(currentProcessName).Length > 1)
             {
-                MessageBox.Show($"An instance of Plutonium Installer is already running!");
+                MessageBox.Show(Properties.Resources.AlreadyRunningWarning);
                 Application.Current.Shutdown();
             }
         }

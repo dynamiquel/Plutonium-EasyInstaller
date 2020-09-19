@@ -41,8 +41,8 @@ namespace PlutoniumEasyInstaller
 
         private void Write(string content)
         {
-            System.Diagnostics.Debug.Write(content);
-            DownloadStatusText.AppendText(content);
+            System.Diagnostics.Debug.WriteLine(content);
+            DownloadStatusText.AppendText($"\r{content}");
             DownloadStatusText.ScrollToEnd();
         }
 
@@ -53,8 +53,8 @@ namespace PlutoniumEasyInstaller
 
         private void Error()
         {
-            MessageBox.Show("There was an error during installation. Please open this app and try again.",
-                "Failed to install",
+            MessageBox.Show(Properties.Resources.InstallationError,
+                Properties.Resources.InstallationErrorHeader,
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
 
@@ -66,7 +66,7 @@ namespace PlutoniumEasyInstaller
             if (!fileSizeAnnounced)
             {
                 fileSizeAnnounced = true;
-                Write($"\rFile is {Math.Round(e.TotalBytesToReceive / 1000000f, 1)} MB.");
+                Write($"File is {Math.Round(e.TotalBytesToReceive / 1000000f, 1)} MB.");
             }
 
             if (e.ProgressPercentage % 10 == 0)
@@ -75,7 +75,7 @@ namespace PlutoniumEasyInstaller
                     return;
 
                 recordedPercentages.Add(e.ProgressPercentage);
-                Write($"\r{e.ProgressPercentage}% complete.");
+                Write($"{e.ProgressPercentage}% complete.");
             }
         }
 
@@ -104,17 +104,17 @@ namespace PlutoniumEasyInstaller
 
             if (e.Cancelled)
             {
-                Write("\rDownload was cancelled!");
+                Write(Properties.Resources.DownloadComplete);
                 Error();
             }
             else if (e.Error != null)
             {
-                Write($"\rDownload failed! Reason: {e.Error}.");
+                Write(string.Format(Properties.Resources.DownloadFailed, e.Error.Message));
                 Error();
             }
             else
             {
-                Write("\rDownload complete!");
+                Write(Properties.Resources.DownloadComplete);
 
                 InstallPiry();
             }
@@ -125,7 +125,7 @@ namespace PlutoniumEasyInstaller
             PirySetup.InstallComplete += OnPiryInstallComplete;
             PirySetup.OnPiryOutput += HandlePiryOutput;
 
-            Write("\rDownloading Call of Duty: Black Ops 2...");
+            Write(Properties.Resources.PiryInstall_DownloadingBO2);
             var successStart = PirySetup.Install(BO2Directory);
 
             if (!successStart)
@@ -139,7 +139,7 @@ namespace PlutoniumEasyInstaller
         {
             await Dispatcher.SwitchToUi();
 
-            Write($"\r{line}");
+            Write(line);
         }
 
         private async void OnPiryInstallComplete()
@@ -149,7 +149,7 @@ namespace PlutoniumEasyInstaller
             PirySetup.InstallComplete -= OnPiryInstallComplete;
             PirySetup.OnPiryOutput -= HandlePiryOutput;
 
-            Write("\rCall of Duty: Black Ops 2 installed.");
+            Write(Properties.Resources.PiryInstall_BO2Downloaded);
 
             Window.EnableBackButton = false;
 

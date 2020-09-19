@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PlutoniumEasyInstaller"
+      xmlns:p="clr-namespace:PlutoniumEasyInstaller.Properties"
       mc:Ignorable="d" 
       Loaded="PageLoaded"
       d:DesignHeight="450" d:DesignWidth="800"   
@@ -16,15 +17,15 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Choose a folder" 
+        <TextBlock Text="{x:Static p:Resources.PirySetup_Header}" 
                    FontWeight="SemiBold"
                    FontSize="20"/>
 
         <StackPanel Grid.Row="1"
                     Margin="0,8,0,0">
-            <TextBlock Text="Choose where you want Call of Duty: Black Ops 2 to be installed."
+            <TextBlock Text="{x:Static p:Resources.PirySetup_FolderHelp}"
                        FontSize="14"/>
-            <TextBlock Text="A minimum of 21 GB is required."
+            <TextBlock Text="{x:Static p:Resources.PirySetup_FolderSize}"
                        Margin="0,4,0,0"/>
             <Grid Margin="0,8,0,0">
                 <Grid.ColumnDefinitions>
@@ -40,7 +41,7 @@
 
                 <Button Grid.Column="1"
                         Margin="8,0,0,0"
-                        Content="Browse..."
+                        Content="{x:Static p:Resources.BrowseFolder}"
                         FontSize="14"
                         Padding="12,4,12,4"
                         Click="BrowseButton_Click"/>

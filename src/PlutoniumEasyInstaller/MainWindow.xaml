@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlutoniumEasyInstaller"
+        xmlns:p="clr-namespace:PlutoniumEasyInstaller.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
@@ -55,14 +56,14 @@
 
                 <Button Name="BackButton"
                         Click="Back_Click"
-                        Content="&lt; Back"
+                        Content="{x:Static p:Resources.Back}"
                         HorizontalAlignment="Stretch"
                         Margin="0,0,8,0"
                         Width="75"/>
                 <Button Grid.Column="1" 
                         Name="NextButton"
                         Click="Next_Click"
-                        Content="Next >"
+                        Content="{x:Static p:Resources.Next}"
                         HorizontalAlignment="Stretch"
                         Width="75"/>
             </StackPanel>

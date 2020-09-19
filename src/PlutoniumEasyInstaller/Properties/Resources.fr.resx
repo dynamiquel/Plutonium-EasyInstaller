@@ -121,160 +121,160 @@
     <value />
   </data>
   <data name="AntiMalwareWarning" xml:space="preserve">
-    <value>An anti-malware program is detected.
-It is recommended to disable them if you want a smooth setup (especially anything named something like Active Threat Defense).
-You can enable them after the setup is complete.
+    <value>Un programme anti-malware est détecté.
+Il est recommandé de les désactiver si vous voulez une configuration en douceur. (especially anything named something like Active Threat Defense).
+Vous pouvez les activer une fois la configuration terminée.
 
 
-If you continue without disabling your anti-malware, you will likely trigger your anti-malware program 1-3 times. You will need to add whatever it catches as an exception and restart the installer.</value>
+Si vous continuez sans désactiver votre anti-malware, vous déclencherez probablement votre programme anti-malware 1-3 fois. Vous devrez ajouter tout ce qu’il attrape comme une exception et redémarrer l’installateur.</value>
   </data>
   <data name="AntiMalwareWarningHeader" xml:space="preserve">
-    <value>Anti-malware detected</value>
+    <value>Anti-malware détecté</value>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>&lt; Back</value>
+    <value>&lt; Retour</value>
   </data>
   <data name="BrowseFolder" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Rechercher...</value>
   </data>
   <data name="Complete_Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Annuler</value>
   </data>
   <data name="Complete_Header" xml:space="preserve">
-    <value>Ready to Start!</value>
+    <value>Prêt à Commencer!</value>
   </data>
   <data name="Complete_Info" xml:space="preserve">
-    <value>Plutonium for Call of Duty: Black Ops 2 has finished installing.</value>
+    <value>Plutonium pour Call of Duty: Black Ops 2 a terminé l’installation</value>
   </data>
   <data name="Complete_Play" xml:space="preserve">
-    <value>Play!</value>
+    <value>Jouer!</value>
   </data>
   <data name="CreatingShortcuts" xml:space="preserve">
-    <value>Creating shortcuts...</value>
+    <value>Créer raccourcis...</value>
   </data>
   <data name="DownloadCancelled" xml:space="preserve">
-    <value>Download was cancelled!</value>
+    <value>Download annulé!</value>
   </data>
   <data name="DownloadComplete" xml:space="preserve">
-    <value>Download complete!</value>
+    <value>Télécharger complet!</value>
   </data>
   <data name="DownloadFailed" xml:space="preserve">
-    <value>Download failed! Reason: {0}</value>
+    <value>Télécharger échoué! Reason: {0}</value>
   </data>
   <data name="GameNotFound" xml:space="preserve">
-    <value>Game not found!</value>
+    <value>Jeu introuvable!</value>
   </data>
   <data name="InstallationError" xml:space="preserve">
-    <value>There was an error during installation. Please open this app and try again.</value>
+    <value>Il y a eu une erreur lors de l’installation. S’il vous plaît ouvrir cette application et essayer à nouveau.</value>
   </data>
   <data name="InstallationErrorHeader" xml:space="preserve">
-    <value>Failed to install</value>
+    <value>Échec de l’installation</value>
   </data>
   <data name="Next" xml:space="preserve">
-    <value>Next &gt;</value>
+    <value>Suivante &gt;</value>
   </data>
   <data name="NotEnoughSpaceHeader" xml:space="preserve">
-    <value>Not enough space</value>
+    <value>Pas assez d’espace</value>
   </data>
   <data name="PiryInstall_BO2Downloaded" xml:space="preserve">
-    <value>Call of Duty: Black Ops 2 installed.</value>
+    <value>Call of Duty: Black Ops 2 installé.</value>
   </data>
   <data name="PiryInstall_DownloadingBO2" xml:space="preserve">
-    <value>Downloading Call of Duty: Black Ops 2...</value>
+    <value>Téléchargement Call of Duty: Black Ops 2...</value>
   </data>
   <data name="PiryInstall_Header" xml:space="preserve">
-    <value>Downloading Call of Duty: Black Ops 2</value>
+    <value>Téléchargement Call of Duty: Black Ops 2</value>
   </data>
   <data name="PiryInstall_Notice" xml:space="preserve">
-    <value>About 14 GB - this may take a while depending on your internet connection...</value>
+    <value>Environ 14 Go - ce processus peut...</value>
   </data>
   <data name="PirySetup_BO2NotEnoughSpace" xml:space="preserve">
-    <value>The drive selected doesn't have enough free space. At least 22 GB is required.</value>
+    <value>Le lecteur sélectionné n’a pas assez d’espace libre. Au moins 22 Go est nécessaire.</value>
   </data>
   <data name="PirySetup_FolderHelp" xml:space="preserve">
-    <value>Choose where you want Call of Duty: Black Ops 2 to be installed.</value>
+    <value>Choisissez où vous voulez  Call of Duty: Black Ops 2 soient installés.</value>
   </data>
   <data name="PirySetup_FolderSize" xml:space="preserve">
-    <value>A minimum of 21 GB is required.</value>
+    <value>Taille approximative 21 Go</value>
   </data>
   <data name="PirySetup_Header" xml:space="preserve">
-    <value>Choose a folder</value>
+    <value>Sélectionner un dossier</value>
   </data>
   <data name="PirySetup_SelectNewBO2Folder" xml:space="preserve">
-    <value>Select where you want to install Call of Duty: Black Ops 2</value>
+    <value>Choisissez où vous voulez Call of Duty: Black Ops 2 soient installés</value>
   </data>
   <data name="PlutoInstall_ConfigFileCreated" xml:space="preserve">
-    <value>Config file created.</value>
+    <value>Fichier config créé.</value>
   </data>
   <data name="PlutoInstall_CreatingConfigFile" xml:space="preserve">
-    <value>Creating config file...</value>
+    <value>Création de fichier config...</value>
   </data>
   <data name="PlutoInstall_DownloadingReShade" xml:space="preserve">
-    <value>Downloading ReShade...</value>
+    <value>Téléchargement ReShade...</value>
   </data>
   <data name="PlutoInstall_Header" xml:space="preserve">
-    <value>Almost there!</value>
+    <value>Presque terminé!</value>
   </data>
   <data name="PlutoInstall_InstallingPlutonium" xml:space="preserve">
-    <value>Installing Plutonium...</value>
+    <value>Installation de Plutonium...</value>
   </data>
   <data name="PlutoInstall_PlutoniumInstalled" xml:space="preserve">
-    <value>Plutonium installed.</value>
+    <value>Plutonium installé.</value>
   </data>
   <data name="PlutoInstall_ReShadeDownloadCancelled" xml:space="preserve">
-    <value>ReShade download was cancelled!</value>
+    <value>ReShade télécharger annulé!</value>
   </data>
   <data name="PlutoInstall_ReShadeDownloadComplete" xml:space="preserve">
-    <value>ReShade download complete!</value>
+    <value>ReShade télécharger complet!</value>
   </data>
   <data name="PlutoInstall_ReShadeDownloadFailed" xml:space="preserve">
-    <value>ReShade download failed!</value>
+    <value>ReShade télécharger échoué!</value>
   </data>
   <data name="PlutoInstall_ReShadeInstallationFailed" xml:space="preserve">
-    <value>ReShade installation failed!</value>
+    <value>ReShade installation échoué!</value>
   </data>
   <data name="PlutoSetup_DesktopShortcut" xml:space="preserve">
-    <value>Desktop Shortcut</value>
+    <value>Bureau Raccourcis</value>
   </data>
   <data name="PlutoSetup_Header" xml:space="preserve">
-    <value>Configure Plutonium</value>
+    <value>Modifier Plutonium</value>
   </data>
   <data name="PlutoSetup_ReShade" xml:space="preserve">
-    <value>Install ReShade (sick ass post-processing effects)</value>
+    <value>Installer ReShade</value>
   </data>
   <data name="PlutoSetup_StartShortcut" xml:space="preserve">
-    <value>Start Menu Shortcut</value>
+    <value>Demarrer Raccourcis</value>
   </data>
   <data name="ShortcutsCreated" xml:space="preserve">
-    <value>Shortcuts created.</value>
+    <value>Raccourciss créé.</value>
   </data>
   <data name="Start_BO2NotFound" xml:space="preserve">
-    <value>Call of Duty: Black Ops 2 could not be found on your computer.
-Could you show me where it is?</value>
+    <value>Call of Duty: Black Ops 2 n’a pas pu être trouvé sur votre appareil.
+Pouvez-vous me montrer où il est?</value>
   </data>
   <data name="Start_InstallerInfo" xml:space="preserve">
-    <value>This installer will help you install Plutonium for Call of Duty: Black Ops 2 (T6)</value>
+    <value>L’application vous aidera à installer du Plutonium for Call of Duty: Black Ops 2 (T6)</value>
   </data>
   <data name="Start_InvalidBO2Folder" xml:space="preserve">
-    <value>The folder selected does not contain Call of Duty: Black Ops 2.
-Try again?</value>
+    <value>Le dossier sélectionné ne contient pas Call of Duty: Black Ops 2.
+Réessayez?</value>
   </data>
   <data name="Start_NonSteamInfo" xml:space="preserve">
-    <value>For users who do not have Call of Duty: Black Ops 2 installed on their computer.</value>
+    <value>Pour les utilisateurs qui n’ont pas Call of Duty: Black Ops 2 installé sur leur ordinateur.</value>
   </data>
   <data name="Start_NonSteamOwners" xml:space="preserve">
-    <value>Non-Steam Owners</value>
+    <value>Non-Steam Détenteurs</value>
   </data>
   <data name="Start_PlutoniumWelcome" xml:space="preserve">
-    <value>Thank you for downloading Plutonium!</value>
+    <value>Merci d’avoir Téléchargé Plutonium</value>
   </data>
   <data name="Start_SelectBO2Folder" xml:space="preserve">
-    <value>Select the COD: Black Ops 2 folder.</value>
+    <value>Sélectionnez le dossier COD: Black Ops 2.</value>
   </data>
   <data name="Start_SteamInfo" xml:space="preserve">
-    <value>For users who already own and have Call of Duty: Black Ops 2 installed on their computer.</value>
+    <value>Pour les utilisateurs qui possèdent déjà et ont Call of Duty: Black Ops 2 installé sur leur ordinateur.</value>
   </data>
   <data name="Start_SteamOwners" xml:space="preserve">
-    <value>Steam Owners</value>
+    <value>Steam Détenteurs</value>
   </data>
 </root>

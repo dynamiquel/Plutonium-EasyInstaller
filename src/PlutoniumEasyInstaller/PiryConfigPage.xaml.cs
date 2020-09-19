@@ -59,7 +59,7 @@ namespace PlutoniumEasyInstaller
             var folderDialogue = new FolderBrowserDialog()
             {
                 ShowNewFolderButton = true,
-                Description = "Select where you want to install Call of Duty: Black Ops 2",
+                Description = Properties.Resources.PirySetup_SelectNewBO2Folder,
                 RootFolder = Environment.SpecialFolder.MyComputer
             };
 
@@ -70,8 +70,8 @@ namespace PlutoniumEasyInstaller
 
             if (GetTotalFreeSpace(folderDialogue.SelectedPath.Substring(0, 3)) < 2.2000E+10)
             {
-                MessageBox.Show("The drive selected doesn't have enough free space. At least 22 GB is required.",
-                    "Not enough space", 
+                MessageBox.Show(Properties.Resources.PirySetup_BO2NotEnoughSpace,
+                    Properties.Resources.NotEnoughSpaceHeader, 
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
 

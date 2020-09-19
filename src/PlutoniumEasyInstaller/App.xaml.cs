@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Windows;
 
 namespace PlutoniumEasyInstaller
 {
@@ -59,6 +63,14 @@ namespace PlutoniumEasyInstaller
                         break;
                     case "/AutoConfig":
                         AutoConfig = true;
+                        break;
+                    case "/Language":
+                        try
+                        {
+                            string language = e.Args[i + 1];
+                            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+                        }
+                        catch { }
                         break;
                 }
             }
