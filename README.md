@@ -8,7 +8,7 @@
 <br/>
 
 <h3 align="center"> 
-    <a href="https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1.0.1/PlutoniumEasyInstaller.exe">🎆 Download the installer and get started 🎆</a>
+    <a href="https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1.0.2/PlutoniumEasyInstaller.exe">🎆 Download the installer and get started 🎆</a>
 </h3>
 <p align="center">
     <a href="https://www.virustotal.com/gui/file/c2180733a76c83b466ea6b7c5688b4ca3c7181a6e63dc903d455a615d1ea4bcd/detection">Virus Report</a>
@@ -44,7 +44,7 @@ This means you can use the same Call of Duty: Black Ops 2 files for both Plutoni
 <br/>
 
 ## 🎮 Sounds interesting, how do I play it?
-#### Just download and run this [file](https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1.0.1/PlutoniumEasyInstaller.exe).
+#### Just download and run this [file](https://github.com/dynamiquel/Plutonium-EasyInstaller/releases/download/v1.0.2/PlutoniumEasyInstaller.exe).
 
 ### I don't have Call of Duty: Black Ops 2
 If you do not own **Call of Duty: Black Ops 2** on Steam, don't worry! The installer can do it for you. **(This option is technically piracy, but we're not judging. Pirate at your own risk!)**
@@ -115,3 +115,6 @@ Automatically skips past the Plutonium and Call of Duty: Black Ops 2 configurati
 
 #### /DisableSingleInstance
 Allows multiple instances of the app to run at the same time. This shouldn't be necessary but anything can happen, right?
+
+#### /DisableSystemChecks
+Disables the popups that appear when something on your computer could affect the installation, such as anti-malware or not having certain dependencies.
